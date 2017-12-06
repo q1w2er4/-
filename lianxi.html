@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
+  <title></title>
+
+  <link rel="stylesheet/less" href="./less/lianxi.less">
+  <script src="../lib/less/less.js"></script>
+
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <style>
+    #collapseOne>.panel-body {
+      background-color: pink;
+    }
+
+    #collapseTwo>.panel-body {
+      background-color: blue;
+    }
+
+    #collapseThree>.panel-body {
+      background-color: rgb(2, 51, 17);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <!--  大家电 -->
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          大家电
+          <span class="glyphicon glyphicon-menu-down pull-right"></span>
+        </a>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+          <div id="collapse{{value.titleId}}" class=" panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+              <div id="category-list">  
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>
+                     <a href="#">我是谁,我在干神马???</a>    
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- 手机数码 -->
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+          aria-controls="collapseTwo">
+          手机数码
+          <span class="glyphicon glyphicon-menu-down pull-right"></span>
+        </a>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+    <!-- 电脑办公 -->
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+          aria-controls="collapseTwo">
+          电脑办公
+          <span class="glyphicon glyphicon-menu-down pull-right"></span>
+        </a>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+    <!-- 生活家电 -->
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
+          aria-controls="collapseTwo">
+          生活家电
+          <span class="glyphicon glyphicon-menu-down pull-right"></span>
+        </a>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingFour">
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+    <!-- 厨卫家电 -->
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFive">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false"
+          aria-controls="collapseTwo">
+          厨卫家电
+          <span class="glyphicon glyphicon-menu-down pull-right"></span>
+        </a>
+      </div>
+      <div id="collapseFive" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingFive">
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+    <!-- 个人护理 -->
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingSix">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
+          aria-controls="collapseTwo">
+          个人护理
+          <span class="glyphicon glyphicon-menu-down pull-right"></span>
+        </a>
+      </div>
+      <div id="collapseSix" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingSix">
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+    <!-- 健康电器 -->
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingSeven">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false"
+          aria-controls="collapseTwo">
+          健康电器
+          <span class="glyphicon glyphicon-menu-down pull-right"></span>
+        </a>
+      </div>
+      <div id="collapseSeven" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingSeven">
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+    <!-- 正品鞋 -->
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingEight">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false"
+          aria-controls="collapseTwo">
+          正品鞋
+          <span class="glyphicon glyphicon-menu-down pull-right"></span>
+        </a>
+      </div>
+      <div id="collapseEight" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingEight">
+        <div class="panel-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/jquery/jquery.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.js"></script>
+  <script>
+    $(function () {
+      // $("button").on('click', function () {
+      //   $('#collapseExample').collapse({
+      //     toggle: false
+      //   })
+      //   console.log('kakaka');
+      // })
+      // $('#dLabel').dropdown('toggle');
+      // $('.collapse').collapse('toggle');
+      //       $('.collapse').on('show.bs.collapse', function () {
+      //   // do something…
+      // })
+
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title></title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="./less/index.less" />
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <div id="layout">
+        <header id="topbar">
+            <a href="#" class="topbar-left pull-left">
+                <img src="images/header_logo.png" alt="" />
+            </a>
+            <a href="#" class="topbar-right pull-right">
+                <img src="./images/header_app.png" alt="" />
+            </a>
+        </header>
+        <div id="searchbar">
+            <form action="#">
+                <input type="text" class="search1" placeholder="请输入你想比价的商品">
+                <input type="text" class="searchbtn" value="搜索">
+            </form>
+        </div>
+        <form action="#" id="aspnetForm">
+            <div id="nav">
+                <div class="container">
+                    <div class="row">
+                        <ul class="clearfix">
+                            <!-- <li>
+                                <a href="#">
+                                    <img src="./images/ic_search.png" alt="">
+                                    <p>比价搜索</p>
+                                </a>
+                            </li>
+                             -->
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="more">
+                <span class="pull-left">超值折扣推荐</span>
+                <a href="#" class="icon-more pull-right">
+                    <img src="./images/more.png" alt="">
+                </a>
+            </div>
+            <!-- 商品促销展示栏 -->
+            <div id="jxhdc">
+                <!-- <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="./images/one-001.jpg" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">明佳友 M59 全身梳妆换衣镜 40*150cm 
+                                <span>69元包邮（下单立减）</span>
+                            </h4>
+                            <p>
+                                <span class="at-left pull-left">国美 | 12-02 12:05</span>
+                                <span class="at-right pull-right">
+                                        <i class="tubiao glyphicon glyphicon-comment"></i>
+                                        <i class="zero pull-right">0</i>
+                                </span>
+                               
+                            </p>     
+                        </div>
+                </div> -->
+            </div>
+        </form>
+        <!-- 更多信息 -->
+        <div id="gengduo">
+            <a href="#" class="gd-info">更多信息</a>
+        </div>
+        <div id="more-end">
+                <span class="pull-left">品牌排行</span>
+                <a href="#" class="circle pull-right">
+                    <img src="./images/more.png" alt="">
+                </a>
+        </div>
+
+    </div>
+    <script id="navTmp" type="text/html">
+        {{each result as value i}}
+            <li id="{{value.indexmenuId}}">
+                <a href="#">
+                    {{#value.img}}
+                    <p>{{value.name}}</p>
+                </a>
+            </li>
+        {{/each}}
+    </script>
+    <!-- 商品促销展示栏 -->
+    <script id="jxhdcTmp" type="text/html">
+        {{each result as value i}}
+        <div class="media" id="{{value.productId}}">
+            <div class="media-left">
+                <a href="#">
+                    {{#value.productImgSm}}
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{value.productName}}
+                    <span>{{value.productPinkage}}</span>
+                </h4>
+                <p>
+                    <span class="at-left pull-left">{{value.productFrom}} | {{value.productTime}}</span>
+                    <span class="at-right pull-right">
+                        <i class="tubiao glyphicon glyphicon-comment"></i>
+                        <i class="zero pull-right">
+                            {{value.productComCount.replace(/[^0-9]/ig,"")}}
+                        </i>
+                    </span>
+                </p>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script src="./lib/template/template.js"></script>
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 引入自己写的js -->
+    <script src="./JS/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title></title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="./less/index2.less" />
+    <script src="./lib/less/less.js"></script>
+
+</head>
+
+<body>
+    <header id="page2-header">
+        <a href="#" class="header-left pull-left">
+            <img src="images/header_logo.png" alt="" />
+        </a>
+        <a href="#" class="header-right pull-right">
+            <img src="./images/header_app.png" alt="" />
+        </a>
+    </header>
+    <div id="p2-searchbar">
+        <form action="#">
+            <input type="text" class="p2-text" placeholder="请输入你想比价的商品">
+            <input type="text" class="p2-searchbtn" value="搜索">
+        </form>
+    </div>
+    <!-- 下拉列表 -->
+    <div id="brief">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+            <!-- <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+                    <table class="table table-bordered panel-body">
+
+                    </table>
+                </div> -->
+
+        </div>
+    </div>
+    <!-- 底部栏 -->
+    <div id="ctl00_footerApp">
+        <div class="foot-top clearfix">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#">
+                <img src="./images/nine_026.jpg" alt=""> 返回顶部
+            </a>
+        </div>
+        <div class="footer">
+            <p class="firstp">
+                <a href="#" class="red">手机APP下载</a>
+                <a href="#">慢慢买手机版</a>
+                -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com </p>
+        </div>
+    </div>
+    <!-- 分类标题模板 -->
+    <script id="panelTmp" type="text/html">
+        {{each result as value i}}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <a role="button" data-toggle="collapse" id="head-link" data-titleId="{{value.titleId}}" data-parent="#accordion" href="#collapse{{value.titleId}}"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    {{value.title}}
+                    <span class="glyphicon glyphicon-menu-down pull-right"></span>
+                </a>
+            </div>
+
+            <div id="collapse{{value.titleId}}" class=" panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+                <div id="category-list">  
+                            
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script id="categoryTmp" type="text/html">
+        {{each result as value i}}
+                <a class="body-link"  href="./index2-3.html?id={{value.categoryId}}&{{value.category}} ">{{value.category}}</a>
+        {{/each}}          
+    </script>
+    <script src="./lib/template/template.js"></script>
+    <script src="../lib/jquery/jquery.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.js"></script>
+    <script>
+        $(function () {
+            // 2.1 分类页功能界面
+            $.ajax({
+                url: 'http://127.0.0.1:9090/api/getcategorytitle',
+                success: function (data) {
+                    // console.log(data);
+                    $("#accordion ").html(template('panelTmp', data));
+                }
+            });
+            // 2.2分类列表
+            $('#accordion ').on('click', 'a#head-link', function () {
+
+                var titleid = $(this).attr('data-titleId');
+
+                console.log(titleid);
+                $.ajax({
+                    url: 'http://127.0.0.1:9090/api/getcategory',
+                    data: {
+                        titleid: titleid
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        $("#accordion #category-list").html(template('categoryTmp', data));
+                    }
+                })
+            })
+
+        })
+    </script>
+</body>
+
+</html>
